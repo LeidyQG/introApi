@@ -6,9 +6,11 @@ async function obtenerTodo(id){
     const respuesta=await fetch(`${url}${id}`);
     const datos=await respuesta.json(); //convierte el objeto fetch  un objeto json
     procesarJson(datos);
+    return datos; //Para poder hacer el test
 }
 
 function procesarJson(dato){
     console.log(dato);
 
 }
+module.exports=obtenerTodo;
